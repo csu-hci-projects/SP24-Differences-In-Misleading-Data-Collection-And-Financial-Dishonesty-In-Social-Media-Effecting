@@ -3,32 +3,23 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Social Media Mockup</title>
-    <link rel="stylesheet" href="style.css">
+    <title>Subscription Service</title>
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <div class="container">
-        <h1>Special Offer: Premium Subscription</h1>
-        <p class="offer">Unlock all features for just $1.99 a month!</p>
-        <button id="subscribeBtn">Subscribe Now!</button>
-        
-        <!-- Hidden fees are revealed after clicking the subscribe button -->
-        <div id="hiddenFees" class="hidden">
-            <p class="alert">Note: Additional charges may apply, including:</p>
-            <ul>
-                <li>Service Fee: $2.99</li>
-                <li>Convenience Fee: $1.50</li>
-                <li>Early Access Fee: $3.00</li>
-            </ul>
-            <p class="total">Total Monthly Cost: <span>$8.49</span></p>
-            <button id="confirmBtn">Confirm Subscription</button>
-        </div>
+    <div id="subscription-section">
+        <h2>Subscribe to our service</h2>
+        <p>Only $5.99/month</p>
+        <button id="subscribe-btn" onclick="subscribeNow()">Subscribe Now</button>
     </div>
 
-    <script>
-        document.getElementById('subscribeBtn').addEventListener('click', function() {
-            document.getElementById('hiddenFees').style.display = 'block';
-        });
-    </script>
+    <div id="confirmation-popup" class="hidden">
+        <h3>Thank you for subscribing!</h3>
+        <p>Your receipt:</p>
+        <p id="receipt-details"></p>
+        <button onclick="closePopup()">Close</button>
+    </div>
+
+    <script src="script.js"></script>
 </body>
 </html>
