@@ -11,4 +11,5 @@ services are collecting more revenue by adding hidden fees or other expenses to 
 transactions, often going unnoticed by the consumer. Even when individuals were aware of the
 potential of misleading media, many fell into the same trap. The types and magnitude of dark
 patterning are rapidly increasing as the use of online media grows exponentially validating the
-need for research in identifying and preventing such data exploitations. 
+need for research in identifying and preventing such data exploitations. The two dark petterns focused on 
+in this study are misdirection in data collection and financial dishonesty. 
