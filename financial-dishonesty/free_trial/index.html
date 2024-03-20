@@ -8,15 +8,14 @@
 </head>
 <body>
     <div id="subscription-section">
-        <h2>Subscribe to our service</h2>
-        <p>Only $5.99/month</p>
+        <h2 id="subscription-header">Subscribe to our service for only <span id="subscription-price">$5.99/month</span></h2>
         <button id="subscribe-btn" onclick="subscribeNow()">Subscribe Now</button>
     </div>
 
     <div id="confirmation-popup" class="hidden">
         <h3>Thank you for subscribing!</h3>
-        <p>Your receipt:</p>
-        <p id="receipt-details"></p>
+        <p>Your new subscription rate:</p>
+        <p id="new-subscription-price"></p>
         <button onclick="closePopup()">Close</button>
     </div>
 

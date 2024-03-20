@@ -1,14 +1,13 @@
 function subscribeNow() {
-    // Simulate payment processing and receipt generation
-    var receipt = "Receipt Number: " + Math.floor(Math.random() * 1000000) + 
-                  "\nSubscription: $5.99/month" + 
-                  "\nDate: " + new Date().toLocaleDateString();
+    var newPrice = "$4.99/month"; 
+    document.getElementById("new-subscription-price").innerText = newPrice;
 
-    // Show confirmation with receipt
-    document.getElementById("receipt-details").innerText = receipt;
-    document.getElementById("confirmation-popup").classList.remove("hidden");
+    document.getElementById("confirmation-popup").style.display = 'block';
+    
+    document.getElementById("subscription-price").innerText = newPrice;
+    document.getElementById("subscription-header").style.color = "#32CD32"; 
 }
 
 function closePopup() {
-    document.getElementById("confirmation-popup").classList.add("hidden");
+    document.getElementById("confirmation-popup").style.display = 'none';
 }
