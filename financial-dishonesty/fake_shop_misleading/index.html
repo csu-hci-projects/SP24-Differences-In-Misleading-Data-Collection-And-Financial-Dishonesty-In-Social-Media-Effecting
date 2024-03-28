@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fake Online Store</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <h1>Fake Online Store</h1>
+    <div id="product-list">
+        <div class="product">
+            <h2>Item 1</h2>
+            <p>Price: $5</p>
+            <button onclick="addToCart('Item 1', 5)">Add to Cart</button>
+        </div>
+        <div class="product">
+            <h2>Item 2</h2>
+            <p>Price: $7</p>
+            <button onclick="addToCart('Item 2', 7)">Add to Cart</button>
+        </div>
+        <div class="product">
+            <h2>Item 3</h2>
+            <p>Price: $3</p>
+            <button onclick="addToCart('Item 3', 3)">Add to Cart</button>
+        </div>
+        <div class="product">
+            <h2>Item 4</h2>
+            <p>Price: $6</p>
+            <button onclick="addToCart('Item 3', 6)">Add to Cart</button>
+        </div>
+    </div>
+
+    <h2>Your Cart</h2>
+    <div id="cart">
+        <ul id="cart-items"></ul>
+        <p>Total: $<span id="total">0</span></p>
+        <p>Convenience Fee: $<span id="convenience-fee">3</span></p>
+        <p>Grand Total: $<span id="grand-total">5</span></p>
+        <button onclick="checkout()">Checkout</button>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
