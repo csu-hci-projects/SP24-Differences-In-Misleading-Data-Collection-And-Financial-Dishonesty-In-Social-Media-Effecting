@@ -1,19 +1,77 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-    <title>Fake Shop</title>
-    <link rel="stylesheet" href="style.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fake Store</title>
+    <style>
+        #products .product {
+            margin-bottom: 20px;
+        }
+    </style>
 </head>
 <body>
-    <h1>Fake Shop</h1>
+    <h1>Fake Store</h1>
     <div id="products">
-        <div class="product" data-price="10" data-name="Item 1"><button>Add to Cart</button></div>
-        <div class="product" data-price="15" data-name="Item 2"><button>Add to Cart</button></div>
-        <div class="product" data-price="7" data-name="Item 3"><button>Add to Cart</button></div>
-        <div class="product" data-price="20" data-name="Item 4"><button>Add to Cart</button></div>
-        <div class="product" data-price="5" data-name="Item 5"><button>Add to Cart</button></div>
+        <div class="product" data-name="Fake Item 1" data-price="9.99">
+            <h3>Fake Item 1</h3>
+            <p>Price: $9.99</p>
+            <button>Add to Cart</button>
+        </div>
+        <div class="product" data-name="Fake Item 2" data-price="19.99">
+            <h3>Fake Item 2</h3>
+            <p>Price: $19.99</p>
+            <button>Add to Cart</button>
+        </div>
     </div>
-    <button id="checkout">Checkout</button>
-    <script src="script.js"></script>
+
+    <div id="cartContents">
+        <h2>Cart</h2>
+        <ul id="cartList"></ul>
+        <p>Total Price: $<span id="totalPrice">0</span></p>
+        <button id="checkout">Checkout</button>
+    </div>
+
+    <script>
+        let cart = [];
+
+        function updateCart() {
+            const cartList = document.getElementById('cartList');
+            const totalPriceElement = document.getElementById('totalPrice');
+            cartList.innerHTML = ''; // Clear the current cart contents
+
+            let totalPrice = 0;
+            cart.forEach(item => {
+                const li = document.createElement('li');
+                li.textContent = `${item.name} - $${item.price}`;
+                cartList.appendChild(li);
+
+                totalPrice += parseFloat(item.price);
+            });
+
+            totalPriceElement.textContent = totalPrice.toFixed(2); // Fix to 2 decimal places
+        }
+
+        document.querySelectorAll('#products .product button').forEach(button => {
+            button.addEventListener('click', e => {
+                const product = e.target.parentElement;
+                const name = product.getAttribute('data-name');
+                const price = product.getAttribute('data-price');
+                cart.push({name, price});
+
+                updateCart(); // Update the cart display
+            });
+        });
+
+        document.getElementById('checkout').addEventListener('click', () => {
+            if (cart.length > 0) {
+                alert('Checking out ' + JSON.stringify(cart));
+                cart = []; // Clear the cart after checkout
+                updateCart(); // Update the cart display after clearing
+            } else {
+                alert('Your cart is empty.');
+            }
+        });
+    </script>
 </body>
 </html>
