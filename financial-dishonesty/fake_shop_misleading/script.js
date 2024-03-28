@@ -1,39 +1,29 @@
 let cart = [];
+let total = 0;
 
-function updateCart() {
-    const cartList = document.getElementById('cartList');
-    const totalPriceElement = document.getElementById('totalPrice');
-    cartList.innerHTML = ''; 
-
-    let totalPrice = 0;
-    cart.forEach(item => {
-        const li = document.createElement('li');
-        li.textContent = `${item.name} - $${item.price}`;
-        cartList.appendChild(li);
-
-        totalPrice += parseFloat(item.price);
-    });
-
-    totalPriceElement.textContent = totalPrice.toFixed(2);
+function addToCart(itemName, price) {
+    cart.push({itemName, price});
+    updateCart();
 }
 
-document.querySelectorAll('#products .product button').forEach(button => {
-    button.addEventListener('click', e => {
-        const product = e.target.parentElement;
-        const name = product.getAttribute('data-name');
-        const price = product.getAttribute('data-price');
-        cart.push({name, price});
+function updateCart() {
+    const cartItemsElement = document.getElementById('cart-items');
+    const totalElement = document.getElementById('total');
+    const grandTotalElement = document.getElementById('grand-total');
+    cartItemsElement.innerHTML = '';
+    total = cart.reduce((sum, item) => {
+        const itemElement = document.createElement('li');
+        itemElement.textContent = `${item.itemName} - $${item.price}`;
+        cartItemsElement.appendChild(itemElement);
+        return sum + item.price;
+    }, 0);
+    totalElement.textContent = total.toFixed(2);
+    const convenienceFee = 3;
+    grandTotalElement.textContent = (total + convenienceFee).toFixed(2);
+}
 
-        updateCart(); 
-    });
-});
-
-document.getElementById('checkout').addEventListener('click', () => {
-    if (cart.length > 0) {
-        alert('Checking out ' + JSON.stringify(cart));
-        cart = [];
-        updateCart();
-    } else {
-        alert('Your cart is empty.');
-    }
-});
+function checkout() {
+    alert('Checkout complete. Thank you for your purchase!');
+    cart = [];
+    updateCart();
+}
