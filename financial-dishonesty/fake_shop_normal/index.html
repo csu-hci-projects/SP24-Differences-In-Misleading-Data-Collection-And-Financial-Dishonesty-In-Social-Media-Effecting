@@ -4,11 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Fake Store</title>
-    <style>
-        #products .product {
-            margin-bottom: 20px;
-        }
-    </style>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
     <h1>Fake Store</h1>
@@ -21,6 +17,16 @@
         <div class="product" data-name="Fake Item 2" data-price="19.99">
             <h3>Fake Item 2</h3>
             <p>Price: $19.99</p>
+            <button>Add to Cart</button>
+        </div>
+        <div class="product" data-name="Fake Item 2" data-price="19.99">
+            <h3>Fake Item 3</h3>
+            <p>Price: $3.99</p>
+            <button>Add to Cart</button>
+        </div>
+        <div class="product" data-name="Fake Item 2" data-price="19.99">
+            <h3>Fake Item 4</h3>
+            <p>Price: $10.99</p>
             <button>Add to Cart</button>
         </div>
     </div>
@@ -38,7 +44,7 @@
         function updateCart() {
             const cartList = document.getElementById('cartList');
             const totalPriceElement = document.getElementById('totalPrice');
-            cartList.innerHTML = ''; // Clear the current cart contents
+            cartList.innerHTML = ''; 
 
             let totalPrice = 0;
             cart.forEach(item => {
@@ -49,7 +55,7 @@
                 totalPrice += parseFloat(item.price);
             });
 
-            totalPriceElement.textContent = totalPrice.toFixed(2); // Fix to 2 decimal places
+            totalPriceElement.textContent = totalPrice.toFixed(2);
         }
 
         document.querySelectorAll('#products .product button').forEach(button => {
@@ -59,15 +65,15 @@
                 const price = product.getAttribute('data-price');
                 cart.push({name, price});
 
-                updateCart(); // Update the cart display
+                updateCart(); 
             });
         });
 
         document.getElementById('checkout').addEventListener('click', () => {
             if (cart.length > 0) {
                 alert('Checking out ' + JSON.stringify(cart));
-                cart = []; // Clear the cart after checkout
-                updateCart(); // Update the cart display after clearing
+                cart = []; 
+                updateCart(); 
             } else {
                 alert('Your cart is empty.');
             }

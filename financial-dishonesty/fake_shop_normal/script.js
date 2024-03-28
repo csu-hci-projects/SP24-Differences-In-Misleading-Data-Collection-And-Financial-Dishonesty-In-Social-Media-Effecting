@@ -3,7 +3,7 @@ let cart = [];
 function updateCart() {
     const cartList = document.getElementById('cartList');
     const totalPriceElement = document.getElementById('totalPrice');
-    cartList.innerHTML = ''; // Clear the current cart contents
+    cartList.innerHTML = ''; 
 
     let totalPrice = 0;
     cart.forEach(item => {
@@ -14,7 +14,7 @@ function updateCart() {
         totalPrice += parseFloat(item.price);
     });
 
-    totalPriceElement.textContent = totalPrice.toFixed(2); // Fix to 2 decimal places
+    totalPriceElement.textContent = totalPrice.toFixed(2);
 }
 
 document.querySelectorAll('#products .product button').forEach(button => {
@@ -24,15 +24,15 @@ document.querySelectorAll('#products .product button').forEach(button => {
         const price = product.getAttribute('data-price');
         cart.push({name, price});
 
-        updateCart(); // Update the cart display
+        updateCart(); 
     });
 });
 
 document.getElementById('checkout').addEventListener('click', () => {
     if (cart.length > 0) {
         alert('Checking out ' + JSON.stringify(cart));
-        cart = []; // Clear the cart after checkout
-        updateCart(); // Update the cart display after clearing
+        cart = [];
+        updateCart();
     } else {
         alert('Your cart is empty.');
     }
