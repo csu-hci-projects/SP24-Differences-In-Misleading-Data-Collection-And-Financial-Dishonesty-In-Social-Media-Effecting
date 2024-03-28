@@ -1,0 +1,11 @@
+body {
+    font-family: Arial, sans-serif;
+}
+
+#products .product {
+    margin-bottom: 10px;
+}
+
+#checkout {
+    margin-top: 20px;
+}
