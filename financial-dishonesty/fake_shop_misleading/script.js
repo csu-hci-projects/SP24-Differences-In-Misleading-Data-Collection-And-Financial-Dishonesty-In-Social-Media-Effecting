@@ -18,7 +18,7 @@ function updateCart() {
         return sum + item.price;
     }, 0);
     totalElement.textContent = total.toFixed(2);
-    const convenienceFee = 3;
+    const convenienceFee = 5;
     grandTotalElement.textContent = (total + convenienceFee).toFixed(2);
 }
 
