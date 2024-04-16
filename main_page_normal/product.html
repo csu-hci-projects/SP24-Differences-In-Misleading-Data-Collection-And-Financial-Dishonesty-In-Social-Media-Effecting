@@ -3,7 +3,7 @@
 <html lang="en">
 <head>
 	<meta charset="utf-8">
-	<title>Available Products | Living Cork Creations</title>
+	<title>ABC Media | CS464</title>
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<link rel="stylesheet" type="text/css" href="style.css">
 	<script src="https://code.jquery.com/jquery-2.2.4.min.js"></script>
@@ -19,66 +19,20 @@
 
     <nav>
         <ul>
+            <li><a href="newsletter.html">Newsletter</a></li>
+            <li><a href="subscribe.html">Subscription</a></li>
+            <li><a href="shop.html">Shop</a></li>
         </ul>
     </nav>
 
     <main>
-        <h1>Cork Bark with Live Plants</h1>
-        <p>All products are hand crafted on ethically sourced cork bark with live plants in varying types and sizes. 
-            Products ship within 2 days and have a live arrival guarantee. 
-        </p>
-
-        <p> See below for sizes and pricing: </p>
+        <h1>ABC Media Feed</h1>
         
-        <button id="sm-button">Online Shoping</button>
-        <button id="me-button">Newsletter</button>
-        <button id="lg-button">Subscriptions</button>
-
-        <p><img id="Cork" src="images/Small.jpg"></p>
-        <div id="div1">
-            <h3>Small Cork Bark</h3>
-
-            <p>Dimensions: 5" Tall by 3" Wide.</p>
-
-            <p>This cork bark is planted with a species of hoya that likes bright light.</p>
-
-            <p>Care: Place in an area with bright direct sunlight and mist once daily.</p>
-
-            <p>Price: $20</p>
-        </div>
-
-        <script>
-            $(document).ready(function(){
-              $("#sm-button").click(function(){
-                $("#Cork").attr("src","images/Small.jpg");
-                $("#div1").load("Small.txt", function(responseTxt, statusTxt, xhr){
-                  if(statusTxt == "error")
-                    alert("Error: " + xhr.status + ": " + xhr.statusText);
-                });
-              });
-        
-            $("#me-button").click(function(){
-                $("#Cork").attr("src","images/Medium.jpg");
-                $("#div1").load("Medium.txt", function(responseTxt, statusTxt, xhr){
-                if(statusTxt == "error")
-                    alert("Error: " + xhr.status + ": " + xhr.statusText);
-                });
-            });
-        
-            $("#lg-button").click(function(){
-                $("#Cork").attr("src","images/Large.jpg");
-                $("#div1").load("Large.txt", function(responseTxt, statusTxt, xhr){
-                if(statusTxt == "error")
-                    alert("Error: " + xhr.status + ": " + xhr.statusText);
-                });
-            });
-            });
-        </script>
-
+     
     </main>
 
     <footer>
-        <p>Part of a CS312 web design project.  Product not actually for sale.</p>
+        <p>Part of a CS464 web study.  Products not actually for sale. No personal data collected.</p>
     </footer>
 </body>
 </html>
