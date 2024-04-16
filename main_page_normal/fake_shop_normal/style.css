@@ -7,6 +7,61 @@ body {
     margin-right: auto;
 }
 
+header {
+    text-align: center;
+    background-color: #273c36; 
+    padding: 20px 0;
+    border-bottom: 3px solid #BACBA9; 
+}
+
+header h1 {
+    font-family: 'Playfair Display', 'Noto Serif', serif;
+    text-transform: uppercase;
+    font-size: 3em;
+    color: #DCE1DE; 
+    margin: 0;
+    transition: color 0.3s ease-in-out;
+}
+
+header h1:hover {
+    color: #A2C3A4; 
+    cursor: pointer;
+}
+
+nav {
+    background-color: #204020;
+    padding: 10px 0;
+}
+
+nav ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+nav ul li {
+    padding: 10px 20px;
+}
+
+nav ul li a {
+    color: #DCE1DE; 
+    text-decoration: none;
+    text-transform: uppercase;
+    font-size: 18px;
+    font-weight: 500;
+    transition: all 0.3s ease-in-out;
+}
+
+nav ul li a:hover, nav ul li a:focus {
+    background-color: #34675C; 
+    color: #A2C3A4;
+    border-radius: 5px; 
+    padding: 10px 15px; 
+}
+
 h1 {
     text-align: center;
     font-family: 'Playfair Display', 'Noto Serif', serif;
