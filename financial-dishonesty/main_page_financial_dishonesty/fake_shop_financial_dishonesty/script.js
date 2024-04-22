@@ -19,7 +19,7 @@ function updateCart() {
         totalPrice += item.price;
     });
 
-    document.getElementById('grand-total').textContent = (totalPrice + 3).toFixed(2);  // Assuming a $3 convenience fee
+    document.getElementById('grand-total').textContent = (totalPrice + 3).toFixed(2); 
     totalPriceElement.textContent = totalPrice.toFixed(2);
 }
 
