@@ -6,14 +6,12 @@ document.getElementById('profileForm').addEventListener('submit', function(e) {
 });
 
 document.getElementById('subscribeBtn').addEventListener('click', function() {
-    alert('Thank you for subscribing!');
-    // Here, you'd typically send a request to your server to update the subscription status
-    // For this example, we'll just hide the prompt
+    alert('Thank you for subscribing! Your new monthly price is $0.99!');
+    
     document.getElementById('newsletterPrompt').classList.add('hidden');
 });
 
 document.getElementById('skipBtn').addEventListener('click', function() {
     alert('Profile updated successfully!');
-    // Hide the newsletter prompt and simulate profile update
     document.getElementById('newsletterPrompt').classList.add('hidden');
 });
