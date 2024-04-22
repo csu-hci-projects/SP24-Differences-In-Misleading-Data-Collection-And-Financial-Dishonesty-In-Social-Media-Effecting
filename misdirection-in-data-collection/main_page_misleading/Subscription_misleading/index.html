@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Subscription Service</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<nav>
+    <ul>
+        <li><a href="../product.html">Home</a></li>
+        <li><a href="../Newsletter_misleading/index.html">Newsletter</a></li>
+        <li><a href="../fake_shop_misleading/index.html">Shop</a></li>
+    </ul>
+</nav>
+<body>
+    <div id="subscription-section">
+        <h2 id="subscription-header">Subscribe to our service for only <span id="subscription-price">$4.99/month</span></h2>
+        <button id="subscribe-btn" onclick="subscribeNow()">Subscribe Now</button>
+    </div>
+
+    <div id="confirmation-popup" class="hidden">
+        <h3>Thank you for subscribing!</h3>
+        <p>Your new subscription rate:</p>
+        <p id="new-subscription-price"></p>
+        <button onclick="closePopup()">Close</button>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

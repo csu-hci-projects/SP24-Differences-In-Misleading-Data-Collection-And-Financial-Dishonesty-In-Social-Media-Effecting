@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fake Store</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<nav>
+    <ul>
+        <li><a href="../product.html">Home</a></li>
+        <li><a href="../Newsletter_misleading/index.html">Newsletter</a></li>
+        <li><a href="../Subscription_misleading/index.html">Subscription</a></li>
+    </ul>
+</nav>
+<body>
+    <h1>Fake Store</h1>
+    <div id="products">
+        <div class="product" data-name="Fake Item 1" data-price="9.99">
+            <h3>Fake Item 1</h3>
+            <p>Price: $9.99</p>
+            <button>Add to Cart</button>
+        </div>
+        <div class="product" data-name="Fake Item 2" data-price="19.99">
+            <h3>Fake Item 2</h3>
+            <p>Price: $19.99</p>
+            <button>Add to Cart</button>
+        </div>
+        <div class="product" data-name="Fake Item 3" data-price="3.99">
+            <h3>Fake Item 3</h3>
+            <p>Price: $3.99</p>
+            <button>Add to Cart</button>
+        </div>
+        <div class="product" data-name="Fake Item 4" data-price="10.99">
+            <h3>Fake Item 4</h3>
+            <p>Price: $10.99</p>
+            <button>Add to Cart</button>
+        </div>
+    </div>
+
+    <div id="cartContents">
+        <h2>Cart</h2>
+        <ul id="cartList"></ul>
+        <p>Total Price: $<span id="totalPrice">0</span></p>
+        <button id="checkout">Checkout</button>
+    </div>
+
+    <script>
+        let cart = [];
+
+        function updateCart() {
+            const cartList = document.getElementById('cartList');
+            const totalPriceElement = document.getElementById('totalPrice');
+            cartList.innerHTML = ''; 
+
+            let totalPrice = 0;
+            cart.forEach(item => {
+                const li = document.createElement('li');
+                li.textContent = `${item.name} - $${item.price}`;
+                cartList.appendChild(li);
+
+                totalPrice += parseFloat(item.price);
+            });
+
+            totalPriceElement.textContent = totalPrice.toFixed(2);
+        }
+
+        document.querySelectorAll('#products .product button').forEach(button => {
+            button.addEventListener('click', e => {
+                const product = e.target.parentElement;
+                const name = product.getAttribute('data-name');
+                const price = product.getAttribute('data-price');
+                cart.push({name, price});
+
+                updateCart(); 
+            });
+        });
+
+        document.getElementById('checkout').addEventListener('click', () => {
+            if (cart.length > 0) {
+                alert('Checking out ' + JSON.stringify(cart));
+                cart = []; 
+                updateCart(); 
+            } else {
+                alert('Your cart is empty.');
+            }
+        });
+    </script>
+</body>
+</html>
