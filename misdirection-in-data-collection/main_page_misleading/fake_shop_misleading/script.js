@@ -4,6 +4,7 @@ let discountApplied = false;
 function updateCart() {
     const cartList = document.getElementById('cartList');
     const totalPriceElement = document.getElementById('totalPrice');
+    const grandTotalElement = document.getElementById('grand-total');
     cartList.innerHTML = ''; 
 
     let totalPrice = 0;
@@ -15,11 +16,13 @@ function updateCart() {
         totalPrice += parseFloat(item.price);
     });
 
+    let finalPrice = totalPrice;
     if (discountApplied) {
-        totalPrice *= 0.9; // Apply 10% discount
+        finalPrice *= 0.9; // Apply 10% discount
     }
 
     totalPriceElement.textContent = totalPrice.toFixed(2);
+    grandTotalElement.textContent = finalPrice.toFixed(2);
 }
 
 document.querySelectorAll('#products .product button').forEach(button => {
@@ -46,8 +49,9 @@ function applyDiscount() {
 
 document.getElementById('checkout').addEventListener('click', () => {
     if (cart.length > 0) {
-        alert('Checking out ' + JSON.stringify(cart));
+        alert('Checking out ' + JSON.stringify(cart) + '\nTotal amount: $' + document.getElementById('grand-total').textContent);
         cart = [];
+        discountApplied = false; // Reset discount
         updateCart();
     } else {
         alert('Your cart is empty.');
