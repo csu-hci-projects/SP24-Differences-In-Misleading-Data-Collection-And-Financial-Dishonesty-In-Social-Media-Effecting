@@ -18,7 +18,7 @@ function updateCart() {
 
     let finalPrice = totalPrice;
     if (discountApplied) {
-        finalPrice *= 0.9; // Apply 10% discount
+        finalPrice *= 0.9; 
     }
 
     totalPriceElement.textContent = totalPrice.toFixed(2);
@@ -51,7 +51,7 @@ document.getElementById('checkout').addEventListener('click', () => {
     if (cart.length > 0) {
         alert('Checking out ' + JSON.stringify(cart) + '\nTotal amount: $' + document.getElementById('grand-total').textContent);
         cart = [];
-        discountApplied = false; // Reset discount
+        discountApplied = false; 
         updateCart();
     } else {
         alert('Your cart is empty.');
