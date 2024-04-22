@@ -37,7 +37,7 @@
             <button>Add to Cart</button>
         </div>
     </div>
-    
+
 <div id="discount-popup" class="hidden">
     <h3>Enter your phone number for a 10% discount!</h3>
     <input type="text" id="phone-number" placeholder="Enter phone number" />
@@ -48,8 +48,11 @@
         <h2>Cart</h2>
         <ul id="cartList"></ul>
         <p>Total Price: $<span id="totalPrice">0</span></p>
+        <input type="text" id="phone-number" placeholder="Enter phone number for 10% off" />
+        <button onclick="applyDiscount()">Apply Discount</button>
         <button id="checkout">Checkout</button>
     </div>
+
 
     <script>
         let cart = [];
