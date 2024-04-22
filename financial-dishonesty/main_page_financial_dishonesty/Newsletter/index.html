@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Update Profile</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<nav>
+    <ul>
+        <li><a href="../product.html">Home</a></li>
+        <li><a href="../fake_shop_normal/index.html">Shop</a></li>
+        <li><a href="../Subscription_normal/index.html">Subscription</a></li>
+    </ul>
+</nav>
+<body>
+    <div class="container">
+        <h1>Update Profile Information</h1>
+        <form id="profileForm">
+            <label for="username">Username:</label>
+            <input type="text" id="username" name="username"><br><br>
+            <label for="bio">Bio:</label>
+            <textarea id="bio" name="bio"></textarea><br><br>
+            <button type="submit">Update Profile</button>
+        </form>
+        
+        <div id="newsletterPrompt" class="hidden">
+            <p>Would you like to subscribe to our newsletter for the latest updates?</p>
+            <button id="subscribeBtn">Yes, Subscribe!</button>
+            <button id="skipBtn">No, Thanks</button>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
