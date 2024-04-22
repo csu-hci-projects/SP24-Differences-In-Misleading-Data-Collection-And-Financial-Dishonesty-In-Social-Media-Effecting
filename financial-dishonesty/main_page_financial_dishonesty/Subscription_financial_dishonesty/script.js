@@ -1,7 +1,6 @@
 function subscribeNow() {
-    var newPrice = "$4.99/month"; 
+    var newPrice = "$7.99/month"; 
     document.getElementById("new-subscription-price").innerText = newPrice;
-
     document.getElementById("confirmation-popup").classList.remove('hidden');
     
     document.getElementById("subscription-price").innerText = newPrice;
