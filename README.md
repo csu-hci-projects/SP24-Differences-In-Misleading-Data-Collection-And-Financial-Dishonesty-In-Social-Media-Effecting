@@ -13,3 +13,13 @@ potential of misleading media, many fell into the same trap. The types and magni
 patterning are rapidly increasing as the use of online media grows exponentially validating the
 need for research in identifying and preventing such data exploitations. The two dark petterns focused on 
 in this study are misdirection in data collection and financial dishonesty. 
+
+
+# How to run the experiment
+1. Gather the participants and split them into 3 groups.
+2. Three different versions of the same social media website are listed above. One group will use the normal website, one group will use the financial dishonest website, and one group will use the misdirection in data collection.
+3. Once the chosen participants are separated into groups, have them sign the agreement waiver and test each person individually.
+4. Start the website by clicking on the product file of the selected group to launch in chrome or another web browser.
+5. Give the participant the attached instruction sheet and let them complete the tasks.
+6. Once they are complete, have them take the provided survey. 
+
