@@ -1,5 +1,5 @@
 document.getElementById('profileForm').addEventListener('submit', function(e) {
-    e.preventDefault(); // Prevent actual form submission
+    e.preventDefault(); 
 
     document.getElementById('newsletterPrompt').classList.remove('hidden');
 });

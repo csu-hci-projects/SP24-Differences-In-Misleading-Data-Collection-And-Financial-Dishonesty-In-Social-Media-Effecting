@@ -149,3 +149,19 @@ footer {
         margin: 0;
     }
 }
+
+#subscribeBtn {
+    background-color: #ff4500; 
+    color: #ffffff; 
+    padding: 12px 24px; 
+    font-weight: bold; 
+    border: none;
+    border-radius: 5px; 
+    cursor: pointer; 
+    transition: background-color 0.3s ease; 
+}
+
+#subscribeBtn:hover {
+    background-color: #ff6347; 
+}
+
