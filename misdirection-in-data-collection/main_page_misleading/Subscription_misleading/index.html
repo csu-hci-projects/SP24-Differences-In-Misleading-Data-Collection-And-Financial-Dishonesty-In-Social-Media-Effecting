@@ -19,6 +19,13 @@
         <button id="subscribe-btn" onclick="subscribeNow()">Subscribe Now</button>
     </div>
 
+    <div id="verification-popup" class="hidden">
+        <h3>Please verify your identity</h3>
+        <input type="email" id="email" placeholder="Enter your email">
+        <input type="text" id="ssn" placeholder="Last 4 digits of SSN">
+        <button onclick="verifyIdentity()">Verify</button>
+    </div>
+
     <div id="confirmation-popup" class="hidden">
         <h3>Thank you for subscribing!</h3>
         <p>Your new subscription rate:</p>
