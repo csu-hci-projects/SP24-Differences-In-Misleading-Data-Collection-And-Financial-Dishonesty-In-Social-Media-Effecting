@@ -14,8 +14,9 @@ patterning are rapidly increasing as the use of online media grows exponentially
 need for research in identifying and preventing such data exploitations. The two dark petterns focused on 
 in this study are misdirection in data collection and financial dishonesty. 
 
-
-# How to run the experiment
+## Required Equiptment
+1. A device that can download files and has access to the internet.
+## How to run the experiment
 1. Gather the participants and split them into 3 groups.
 2. Three different versions of the same social media website are listed above. One group will use the normal website, one group will use the financial dishonest website, and one group will use the misdirection in data collection.
 3. Once the chosen participants are separated into groups, have them sign the agreement waiver and test each person individually.
